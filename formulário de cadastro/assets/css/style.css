@@ -1,0 +1,187 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Inter;
+    /* (box-sizing: border-box; é uma técnica para incluir padding e borda no cálculo do tamanho do elemento) */
+}
+
+#picture__input {
+    display: none;
+}
+
+.picture {
+    width: 3cm; /* Largura desejada para o quadro */
+    height: 4cm; /* Altura desejada para o quadro */
+    aspect-ratio: 3/4; /* Proporção 3:4 */
+    background: #ddd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #aaa;
+    border: 2px dashed currentcolor;
+    cursor: pointer;
+    font-family: Inter;
+    transition: color 300ms ease-in-out, background 300ms ease-in-out;
+    outline: none;
+    overflow: hidden;
+}
+
+.picture:hover {
+    color: #777;
+    background: #ccc;
+}
+
+.picture:active {
+    border-color: rgb(0, 0, 0);
+    color: rgb(0, 0, 0);
+    background: #eee;
+}
+
+.picture:focus {
+    color: #777;
+    background: #ccc;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.picture img {
+    max-width: 100%; /* Ajusta a largura da imagem para caber dentro do quadro */
+    max-height: 100%; /* Ajusta a altura da imagem para caber dentro do quadro */
+}
+
+body {
+    font-family: Inter, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+header {
+    text-align: center;
+    font-size: 12px;
+    margin-bottom: 2px;
+    padding: 10px 0;
+}
+
+header div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.contact {
+    max-width: 20px;
+}
+
+header img {
+    max-width: 100px; /* Ajuste o tamanho máximo conforme necessário */
+    text-align: center;
+}
+
+/* Estilos para posicionar as imagens */
+#logo-pref {
+    float: left;
+}
+
+#logo-caif {
+    float: right;
+}
+
+.form-header {
+    text-align: center;
+    font-size: 12px;
+    align-self: center;
+}
+
+.profile-picture {
+    display: flex;
+    flex-direction: row-reverse; /* Inverte a direção dos elementos */
+    align-items: center;
+    margin-bottom: 2px;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+
+.input-box {
+    margin-bottom: 6px
+}
+
+#data-sector {
+    display: flex;
+    align-items: flex-start; /* Alinha os itens ao topo */
+}
+  
+  
+fieldset {
+    display: grid;
+    grid-template-columns: repeat(2, 0.8fr);
+    gap: 10px;
+    border: none;
+  }
+
+.input-box label {
+    margin-bottom: 2px; /* Adicione um espaço entre o label e o input */
+}
+
+input[type="text"],
+input[type="number"],
+input[type="date"],
+select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+input[type="submit"],
+#personal-address button {
+    padding: 10px 20px;
+    background-color: #0cd627;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#personal-address button {
+    background-color: #007bff;  
+}
+
+
+#personal-address button a {
+    color: #fff;
+    text-decoration: none;
+}
+
+#final-buttons {
+    display: grid;
+    grid-template-columns: repeat(3, 0.01fr);
+    gap:2;
+    border: none;
+}
+input[type="submit"]:hover,
+#personal-address button:hover {
+    background-color: #1b811b;
+}
+
+#personal-address button:hover {
+    background-color: #0056b3;
+}
+
+.print-button img, .download-button img{
+    width: 28px;
+    cursor: pointer;
+}

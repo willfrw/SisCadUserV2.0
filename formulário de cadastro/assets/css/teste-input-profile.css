@@ -1,0 +1,42 @@
+#picture__input {
+    display: none;
+}
+
+.picture {
+    width: 3cm; /* Largura desejada para o quadro */
+    height: 4cm; /* Altura desejada para o quadro */
+    aspect-ratio: 3/4; /* Proporção 3:4 */
+    background: #ddd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #aaa;
+    border: 2px dashed currentcolor;
+    cursor: pointer;
+    font-family: sans-serif;
+    transition: color 300ms ease-in-out, background 300ms ease-in-out;
+    outline: none;
+    overflow: hidden;
+}
+
+.picture:hover {
+    color: #777;
+    background: #ccc;
+}
+
+.picture:active {
+    border-color: turquoise;
+    color: turquoise;
+    background: #eee;
+}
+
+.picture:focus {
+    color: #777;
+    background: #ccc;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.picture img {
+    max-width: 100%; /* Ajusta a largura da imagem para caber dentro do quadro */
+    max-height: 100%; /* Ajusta a altura da imagem para caber dentro do quadro */
+}
