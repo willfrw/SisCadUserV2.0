@@ -68,7 +68,7 @@ function mascaraRG(i){
 
 }
 
-function mascaraNIS(i){
+function mascaraTITULO(i){
  
  var v = i.value;
  
@@ -77,8 +77,8 @@ function mascaraNIS(i){
     return;
  }
  
- i.setAttribute("maxlength", "13");
- if (v.length == 1 || v.length == 6 || v.length == 11) i.value += ".";
+ i.setAttribute("maxlength", "17");
+ if (v.length == 4 || v.length == 9 || v.length == 14) i.value += " ";
 }
 
 function mascaraSUS(i){
