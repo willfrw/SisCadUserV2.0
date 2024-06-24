@@ -133,17 +133,19 @@
                                 </div>
 
                                 <div class="input-box">
+                                    <label for="orgexp">Órgão Expedidor</label>
+                                    <input id="orgexp" oninput="this.value = this.value.toUpperCase()" type="text" name="Órgão Expedidor" placeholder="Digite o órgão expedidor" required>
+                                </div> 
+
+                                <div class="input-box">
                                     <label for="id-date" >Data de Expedição</label>
                                     <input id="id-date" type="date" name="DATA ID" placeholder="" required>
                                 </div>
 
-                                <div class="input-box">
-                                    <label for="orgexp">Órgão Expedidor</label>
-                                    <input id="orgexp" oninput="this.value = this.value.toUpperCase()" type="text" name="Órgão Expedidor" placeholder="Digite o órgão expedidor" required>
-                                </div> 
+                                
                                 <div class="input-box">
                                     <label for="uf">UF</label>
-                                    <select name="UF" id="ufaddres">
+                                    <select name="UF" id="uf">
                                         <option value="">Selecione a Unidade Federativa</option>
                                         <option value="AC">AC</option>
                                         <option value="AL">AL</option>
@@ -196,32 +198,81 @@
                                     <input id="section" type="number" name="Seção" placeholder="Digite a Seção" maxlength="4"  required>
                                 </div>  
 
-                                
+                                <div class="input-box">
+                                    <label for="ctps">CTPS N°</label> <br>
+                                    <input id="ctps" type="number" name="CTPS" placeholder="Digite o número da CTPS" minlength="7" required>
+                                </div>                                      
+                                <div class="input-box">
+                                    <label for="série">Série</label> <br>
+                                    <input id="série" type="number" name="Série" placeholder="Digite a série" minlength="4" required>
+                                </div>    
+                                <div class="input-box">
+                                    <label for="ufctps">UF</label>
+                                    <select name="UFCTPS" id="ufctps">
+                                        <option value="">Selecione a UF da CTPS</option>
+                                        <option value="AC">AC</option>
+                                        <option value="AL">AL</option>
+                                        <option value="AP">AP</option>   
+                                        <option value="AM">AM</option>
+                                        <option value="BA">BA</option>
+                                        <option value="CE">CE</option>  
+                                        <option value="DF">DF</option>
+                                        <option value="GO">GO</option>
+                                        <option value="MA">MA</option>  
+                                        <option value="MT">MT</option>
+                                        <option value="MS">MS</option>
+                                        <option value="MG">MG</option>  
+                                        <option value="PA">PA</option>
+                                        <option value="PB">PB</option>
+                                        <option value="PR">PR</option>
+                                        <option value="PE">PE</option>
+                                        <option value="PI">PI</option>  
+                                        <option value="RJ">RJ</option>  
+                                        <option value="RN">RN</option>  
+                                        <option value="RS">RS</option>  
+                                        <option value="RO">RO</option>  
+                                        <option value="RR">RR</option>  
+                                        <option value="SC">SC</option>  
+                                        <option value="SP">SP</option>
+                                        <option value="SE">SE</option> 
+                                        <option value="TO">TO</option>                                      
+                                    </select>                                
+                                </div>  
+                                <div class="input-box">
+                                    <label for="ctps-date" >Data de Expedição</label>
+                                    <input id="ctps-date" type="date" name="DATA CTPS" placeholder="" required>
+                                </div>
+
+                                <div class="input-box">
+                                    <label for="registroprof">Registro Profissional (O.C.) N°</label> <br>
+                                    <input id="registroprof" type="number" name="Registro Profissional" placeholder="Digite o número de Registro Profssional" maxlength="25" required>
+                                </div>     
+                                <div class="input-box">
+                                    <label for="orgexpprof">Órgão Expedidor</label>
+                                    <input id="orgexpprof" oninput="this.value = this.value.toUpperCase()" type="text" name="Órgão Expedidor Registro Profissional" placeholder="Digite o órgão expedidor do Registro" required>
+                                </div> 
+                                <div class="input-box">
+                                    <label for="rp-date" >Data de Expedição</label>
+                                    <input id="rp-date" type="date" name="DATA REGISTRO PROF" placeholder="" required>
+                                </div>
+
+                                <div class="input-box">
+                                    <label for="certreserv">Certificado de Reservista</label> <br>
+                                    <input id="certreserv" type="number" name="Certificado de Reservista" placeholder="Digite o número" maxlength="12" >
+                                </div>   
+                                <div class="input-box">
+                                    <label for="pispasep">PIS/PASEP</label>
+                                    <input id="pispasep" oninput="mascaraPIS(this)" minlength="14" type="text" name="PIS/PASEP" placeholder="Digite o PIS ou PASEP" required>
+                                </div>  
+
+
+
 
                                 <div class="input-box">
                                     <label for="sus">SUS</label>
                                     <input id="sus" oninput="mascaraSUS(this)" minlength="18" type="text" name="SUS" placeholder="Digite o SUS">
                                 </div>                              
-                                
-            
-                                
-    
-                                <div class="input-box">
-                                    <label for="
-                                    ethnicity">Etnia</label>
-                                    <select name="
-                                    ETNIA" id="
-                                    ethnicity" required>
-                                        <option value="">Selecione uma opção</option>
-                                        <option value="PRETA">Preta</option>
-                                        <option value="BRANCA">Branca</option>
-                                        <option value="PARDA">Parda</option>
-                                        <option value="AMARELA">Amarela</option>
-                                        <option value="INDÍGENA">Indígena</option>
-                                        <option value="PREFERE NÃO DIZER">Prefiro não dizer</option>
-                                    </select>   
-                                </div>  
-                                
+                                                                         
                                    
                                 <br>
 
@@ -265,17 +316,7 @@
                                     <input id="cep" oninput="mascaraCEP(this)" minlength="9" type="text" name="CEP" placeholder="Digite o CEP" required>
                                     <button><a href="https://buscacepinter.correios.com.br/app/endereco/index.php" target="_blank">Buscar CEP</a></button>
                                 </div>
-                                <div class="input-box">
-                                    <label for="district">Distrito</label>
-                                    <select name="DISTRITO" id="district" required>
-                                        <option value="">Selecione o distrito da residência</option>
-                                        <option value="1°-DISTRITO">1° Distrito</option>
-                                        <option value="2°-DISTRITO">2° Distrito</option>
-                                        <option value="3°-DISTRITO">3° Distrito</option>
-                                        <option value="4°-DISTRITO">4° Distrito</option>
-                                    </select>                            
-                                    <button><a href="https://maricainfo.com/mapa-de-marica" target="_blank">Consutar Distrito</a></button> 
-                                </div>
+                                
                                 <div class="input-box">
                                     <label for="municipality">Município</label>
                                     <input id="municipality" oninput="this.value = this.value.toUpperCase()" type="text" name="MUNICÍPIO" placeholder="Digite o Município" required>
