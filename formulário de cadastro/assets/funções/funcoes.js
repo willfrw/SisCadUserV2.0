@@ -68,7 +68,7 @@ function mascaraRG(i){
 
 }
 
-function mascaraNIS(i){
+function mascaraTITULO(i){
  
  var v = i.value;
  
@@ -77,22 +77,24 @@ function mascaraNIS(i){
     return;
  }
  
- i.setAttribute("maxlength", "13");
- if (v.length == 1 || v.length == 6 || v.length == 11) i.value += ".";
+ i.setAttribute("maxlength", "17");
+ if (v.length == 4 || v.length == 9 || v.length == 14) i.value += " ";
 }
 
-function mascaraSUS(i){
+function mascaraPIS(i){
+   
+   var v = i.value;
+   
+   if(isNaN(v[v.length-1])){ // impede entrar outro caractere que não seja número
+      i.value = v.substring(0, v.length-1);
+      return;
+   }
+   
+   i.setAttribute("maxlength", "14");
+   if (v.length == 3 || v.length == 9) i.value += ".";
+   if (v.length == 12) i.value += "-";
  
- var v = i.value;
- 
- if(isNaN(v[v.length-1])){ // impede entrar outro caractere que não seja número
-    i.value = v.substring(0, v.length-1);
-    return;
  }
- 
- i.setAttribute("maxlength", "18");
- if (v.length == 3 || v.length == 8 || v.length == 13) i.value += ".";
-}
 
 function mascaraCEP(i){
  
