@@ -265,17 +265,38 @@
                                     <input id="pispasep" oninput="mascaraPIS(this)" minlength="14" type="text" name="PIS/PASEP" placeholder="Digite o PIS ou PASEP" required>
                                 </div>  
 
-
-
+                                <div class="input-box">
+                                    <label for="cnh">CNH</label>
+                                    <input id="cnh" maxlength="11" type="number" name="CNH" placeholder="Digite o CNH">
+                                </div>                             
+                                
+                                <div class="input-box">
+                                    <label for="categoriacnh">Categoria</label>
+                                    <input id="categoriacnh" maxlength="3" type="text" name="CATEGORIA" placeholder="Digite a Categoria">
+                                </div>
 
                                 <div class="input-box">
-                                    <label for="sus">SUS</label>
-                                    <input id="sus" oninput="mascaraSUS(this)" minlength="18" type="text" name="SUS" placeholder="Digite o SUS">
-                                </div>                              
-                                                                         
+                                    <label for="cnh-exp-date" >Data de Expedição</label>
+                                    <input id="cnh-exp-date" type="date" name="DATA EXPEDIÇÃO CNH" placeholder="" required>
+                                </div>
+
+                                <div class="input-box">
+                                    <label for="cnh-validate" >Data de Validade</label>
+                                    <input id="cnh-validate" type="date" name="DATA DE VALIDADE CNH" placeholder="" required>
+                                </div>
+
+                                <div class="input-box">
+                                    <label for="cnh-primeira" >Data da 1ª Habilitação</label>
+                                    <input id="cnh-primeira" type="date" name="DATA 1ª CNH" placeholder="" required>
+                                </div>
+
+                                <div class="input-box">
+                                    <label for="email">E-mail</label>
+                                    <input id="email" maxlength="50" type="text" name="E-MAIL" placeholder="exemplo@exemplo.com">
+                                </div>
                                    
                                 <br>
-
+                                <!--
                                 <div class="input-box">
                                     <label for="school">Unidade de Ensino</label>
                                     <input id="school" oninput="this.value = this.value.toUpperCase()" type="text" name="UNIDADE ESCOLAR" placeholder="Digite a unidade de ensino">  
@@ -298,7 +319,7 @@
                                         <option value="VESPERTINO">Vespertino</option>
                                         <option value="NOTURNO">Noturno</option>                 
                                     </select> 
-                                </div>
+                                </div>-->
                             </fieldset>
                         
                             <div id="personal-address">
@@ -306,6 +327,15 @@
                                 <div class="input-box">
                                     <label for="address">Endereço</label>
                                     <input id="address" oninput="this.value = this.value.toUpperCase()" type="text" name="ENDEREÇO" placeholder="Digite a Rua" required>
+                                </div>
+                                <div class="input-box">
+                                    <label for="address-number">Número</label>
+                                    <input id="address-number" type="number" minlength="1" placeholder="Digite o número" required>
+                                </div>
+
+                                <div class="input-box">
+                                    <label for="complement">Complemento</label>
+                                    <input id="complement"oninput="this.value = this.value.toUpperCase()"  type="text" name="COMPLEMENTO" placeholder="Digite completo">
                                 </div>
                                 <div class="input-box">
                                     <label for="neighborhood">Bairro</label>
