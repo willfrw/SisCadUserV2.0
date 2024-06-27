@@ -221,3 +221,127 @@ function printPage() {
      event.target.submit(); // Envie o formulário após o atraso
    }, 1000);
  }
+
+ function toggleDependentes() {
+   var sim = document.getElementById('dependentesSim').checked;
+   var dependentesInfo = document.getElementById('dependentesInfo');
+   if (sim) {
+       dependentesInfo.classList.remove('hidden');
+   } else {
+       dependentesInfo.classList.add('hidden');
+       document.getElementById('dependentesDetails').classList.add('hidden');
+       clearDependentesDetails();
+   }
+}
+
+function generateDependentesInputs() {
+   var numDependentes = document.getElementById('numDependentes').value;
+   var dependentesDetails = document.getElementById('dependentesDetails');
+   var dependentesInputs = document.getElementById('dependentesInputs');
+   
+   clearDependentesDetails();
+
+   if (numDependentes > 0) {
+       dependentesDetails.classList.remove('hidden');
+       for (var i = 1; i <= numDependentes; i++) {
+           var labelNome = document.createElement('label');
+           labelNome.innerHTML = 'Nome do dependente ' + i + ': ';
+           var inputNome = document.createElement('input');
+           inputNome.type = 'text';
+           inputNome.name = 'dependente' + i + 'Nome';
+           dependentesInputs.appendChild(labelNome);
+           dependentesInputs.appendChild(inputNome);
+           dependentesInputs.appendChild(document.createElement('br'));
+
+           var labelNascimento = document.createElement('label');
+           labelNascimento.innerHTML = 'Data de nascimento do dependente ' + i + ': ';
+           var inputNascimento = document.createElement('input');
+           inputNascimento.type = 'date';
+           inputNascimento.name = 'dependente' + i + 'Nascimento';
+           dependentesInputs.appendChild(labelNascimento);
+           dependentesInputs.appendChild(inputNascimento);
+           dependentesInputs.appendChild(document.createElement('br'));
+
+           var labelCpf = document.createElement('label');
+           labelCpf.innerHTML = 'CPF do dependente ' + i + ': ';
+           var inputCpf = document.createElement('input');
+           inputCpf.type = 'text';
+           inputCpf.name = 'dependente' + i + 'Cpf';
+           inputCpf.setAttribute('oninput', 'mascaraCPF(this)');
+           dependentesInputs.appendChild(labelCpf);
+           dependentesInputs.appendChild(inputCpf);
+           dependentesInputs.appendChild(document.createElement('br'));
+       }
+   }
+}
+
+function clearDependentesDetails() {
+   var dependentesInputs = document.getElementById('dependentesInputs');
+   while (dependentesInputs.firstChild) {
+       dependentesInputs.removeChild(dependentesInputs.firstChild);
+   }
+}
+
+function toggleCargos() {
+   var sim = document.getElementById('cargosSim').checked;
+   var cargosInfo = document.getElementById('cargosInfo');
+   if (sim) {
+       cargosInfo.classList.remove('hidden');
+   } else {
+       cargosInfo.classList.add('hidden');
+       document.getElementById('cargosDetails').classList.add('hidden');
+       clearCargosDetails();
+   }
+}
+
+function generateCargosInputs() {
+   var numCargos = document.getElementById('numCargos').value;
+   var cargosDetails = document.getElementById('cargosDetails');
+   var cargosInputs = document.getElementById('cargosInputs');
+   
+   clearCargosDetails();
+
+   if (numCargos > 0) {
+       cargosDetails.classList.remove('hidden');
+       for (var i = 1; i <= numCargos; i++) {
+           var labelCargo = document.createElement('label');
+           labelCargo.innerHTML = 'Cargo ' + i + ': ';
+           var inputCargo = document.createElement('input');
+           inputCargo.type = 'text';
+           inputCargo.name = 'cargo' + i;
+           cargosInputs.appendChild(labelCargo);
+           cargosInputs.appendChild(inputCargo);
+           cargosInputs.appendChild(document.createElement('br'));
+
+           var labelJornada = document.createElement('label');
+           labelJornada.innerHTML = 'Jornada de trabalho do cargo ' + i + ' (de ___ às ___h): ';
+           var inputJornadaInicio = document.createElement('input');
+           inputJornadaInicio.type = 'time';
+           inputJornadaInicio.name = 'cargo' + i + 'JornadaInicio';
+           var inputJornadaFim = document.createElement('input');
+           inputJornadaFim.type = 'time';
+           inputJornadaFim.name = 'cargo' + i + 'JornadaFim';
+           cargosInputs.appendChild(labelJornada);
+           cargosInputs.appendChild(inputJornadaInicio);
+           cargosInputs.appendChild(document.createTextNode(' às '));
+           cargosInputs.appendChild(inputJornadaFim);
+           cargosInputs.appendChild(document.createElement('br'));
+
+           var labelOrgao = document.createElement('label');
+           labelOrgao.innerHTML = 'Órgão onde trabalha no cargo ' + i + ': ';
+           var inputOrgao = document.createElement('input');
+           inputOrgao.type = 'text';
+           inputOrgao.name = 'cargo' + i + 'Orgao';
+           cargosInputs.appendChild(labelOrgao);
+           cargosInputs.appendChild(inputOrgao);
+           cargosInputs.appendChild(document.createElement('br'));
+       }
+   }
+}
+
+function clearCargosDetails() {
+   var cargosInputs = document.getElementById('cargosInputs');
+   while (cargosInputs.firstChild) {
+       cargosInputs.removeChild(cargosInputs.firstChild);
+   }
+}

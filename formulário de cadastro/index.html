@@ -296,64 +296,153 @@
                                 </div>
                                    
                                 <br>
-                                <!--
-                                <div class="input-box">
-                                    <label for="school">Unidade de Ensino</label>
-                                    <input id="school" oninput="this.value = this.value.toUpperCase()" type="text" name="UNIDADE ESCOLAR" placeholder="Digite a unidade de ensino">  
-                                    <label for="school-year">Ano Escolar</label>
-                                    <input id="school-year" oninput="this.value = this.value.toUpperCase()" type="text" name="ANO LETIVO" placeholder="Digite o ano letivo">            
-                                </div>
-    
-                                <div class="input-box">
-                                    <label for="education-degree">Grau de Ensino</label>
-                                    <select name="GRAU DE ENSINO" id="education-degree">
-                                        <option value="FUND-1">Fundamental 1</option>
-                                        <option value="FUND-2">Fundamental 2</option>
-                                        <option value="MÉDIO">Médio</option>
-                                        <option value="SUPERIOR">Superior</option>                      
-                                    </select>
-                                    
-                                    <label for="shift">Turno</label>
-                                    <select name="TURNO" id="shift">
-                                        <option value="MATUTINO">Matutino</option>
-                                        <option value="VESPERTINO">Vespertino</option>
-                                        <option value="NOTURNO">Noturno</option>                 
-                                    </select> 
-                                </div>-->
+            
                             </fieldset>
                         
                             <div id="personal-address">
                                 <fieldset>
+                                    <div class="input-box">
+                                        <label for="address">Endereço</label>
+                                        <input id="address" oninput="this.value = this.value.toUpperCase()" type="text" name="ENDEREÇO" placeholder="Digite a Rua" required>
+                                    </div>
+                                    <div class="input-box">
+                                        <label for="address-number">Número</label>
+                                        <input id="address-number" type="number" minlength="1" placeholder="Digite o número" required>
+                                    </div>
+
+                                    <div class="input-box">
+                                        <label for="complement">Complemento</label>
+                                        <input id="complement"oninput="this.value = this.value.toUpperCase()"  type="text" name="COMPLEMENTO" placeholder="Digite completo">
+                                    </div>
+                                    <div class="input-box">
+                                        <label for="neighborhood">Bairro</label>
+                                        <input id="neighborhood" oninput="this.value = this.value.toUpperCase()" type="text" name="BAIRRO" placeholder="Digite o Bairro" required>
+                                    </div>
+                                    <div class="input-box">
+                                        <label for="cep">CEP</label>
+                                        <input id="cep" oninput="mascaraCEP(this)" minlength="9" type="text" name="CEP" placeholder="Digite o CEP" required>
+                                        <button><a href="https://buscacepinter.correios.com.br/app/endereco/index.php" target="_blank">Buscar CEP</a></button>
+                                    </div>
+                                    
+                                    <div class="input-box">
+                                        <label for="municipality">Município</label>
+                                        <input id="municipality" oninput="this.value = this.value.toUpperCase()" type="text" name="MUNICÍPIO" placeholder="Digite o Município" required>
+                                    </div>
+                                    <div class="input-box">
+                                        <label for="uf">UF</label>
+                                        <select name="UF" id="ufaddres">
+                                            <option value="">Selecione a Unidade Federativa</option>
+                                            <option value="AC">AC</option>
+                                            <option value="AL">AL</option>
+                                            <option value="AP">AP</option>   
+                                            <option value="AM">AM</option>
+                                            <option value="BA">BA</option>
+                                            <option value="CE">CE</option>  
+                                            <option value="DF">DF</option>
+                                            <option value="GO">GO</option>
+                                            <option value="MA">MA</option>  
+                                            <option value="MT">MT</option>
+                                            <option value="MS">MS</option>
+                                            <option value="MG">MG</option>  
+                                            <option value="PA">PA</option>
+                                            <option value="PB">PB</option>
+                                            <option value="PR">PR</option>
+                                            <option value="PE">PE</option>
+                                            <option value="PI">PI</option>  
+                                            <option value="RJ">RJ</option>  
+                                            <option value="RN">RN</option>  
+                                            <option value="RS">RS</option>  
+                                            <option value="RO">RO</option>  
+                                            <option value="RR">RR</option>  
+                                            <option value="SC">SC</option>  
+                                            <option value="SP">SP</option>
+                                            <option value="SE">SE</option> 
+                                            <option value="TO">TO</option>                                      
+                                        </select>
+                                    
+                                    </div>
+                                    
+                                    <div class="input-box">
+                                        <label for="reference">Ponto de Referência</label>
+                                        <input id="reference"oninput="this.value = this.value.toUpperCase()"  type="text" name="REFERÊNCIA" placeholder="Digite um Ponto de Referência">
+                                    </div>
+                                </fieldset>                              
+                            </div>   
+                            <fieldset>
                                 <div class="input-box">
-                                    <label for="address">Endereço</label>
-                                    <input id="address" oninput="this.value = this.value.toUpperCase()" type="text" name="ENDEREÇO" placeholder="Digite a Rua" required>
-                                </div>
-                                <div class="input-box">
-                                    <label for="address-number">Número</label>
-                                    <input id="address-number" type="number" minlength="1" placeholder="Digite o número" required>
+                                    <label for="tel">Telefone fixo</label>
+                                    <input id="tel" oninput="mascaraTEL(this)" minlength="14" type="text" name="TELEFONE FIXO" placeholder="Digite o telefone fixo">
                                 </div>
 
                                 <div class="input-box">
-                                    <label for="complement">Complemento</label>
-                                    <input id="complement"oninput="this.value = this.value.toUpperCase()"  type="text" name="COMPLEMENTO" placeholder="Digite completo">
-                                </div>
+                                    <label for="cel">Celular</label>
+                                    <input id="cel" oninput="mascaraCEL(this)" minlength="15" type="text" name="CELULAR 1" placeholder="Digite o celular" required>
+                                </div>                              
+                            </fieldset>
+                            
+                            <fieldset>
                                 <div class="input-box">
-                                    <label for="neighborhood">Bairro</label>
-                                    <input id="neighborhood" oninput="this.value = this.value.toUpperCase()" type="text" name="BAIRRO" placeholder="Digite o Bairro" required>
+                                    <label for="estado-civil">Estado Civil</label>
+                                    <select name="ESTADO-CIVIL" id="estado-civil">
+                                        <option value="">Selecione o estado-civil</option>
+                                        <option value="Solteiro(a)">Solteiro</option>
+                                        <option value="Casado(a)">Casado</option>
+                                        <option value="Divorciado(a)">Divorciado</option>
+                                        <option value="União Estável">União Estável</option>
+                                        <option value="Outros">Outros</option>                                        
+                                    </select>                    
                                 </div>
+
                                 <div class="input-box">
-                                    <label for="cep">CEP</label>
-                                    <input id="cep" oninput="mascaraCEP(this)" minlength="9" type="text" name="CEP" placeholder="Digite o CEP" required>
-                                    <button><a href="https://buscacepinter.correios.com.br/app/endereco/index.php" target="_blank">Buscar CEP</a></button>
+                                    <label for="spouse">Conjuge</label>
+                                    <input id="spouse" oninput="this.value = this.value.toUpperCase()" type="text" name="Conjuge" placeholder="Digite o nome completo do conjuge" required>
                                 </div>
                                 
                                 <div class="input-box">
-                                    <label for="municipality">Município</label>
-                                    <input id="municipality" oninput="this.value = this.value.toUpperCase()" type="text" name="MUNICÍPIO" placeholder="Digite o Município" required>
+                                    <label for="spouse-date" >Data de Nascimento - Conjuge</label>
+                                    <input id="spouse-date" type="date" name="DN Conjuge" placeholder="" required>
                                 </div>
+
+                                <div class="input-box">
+                                    <label for="cpf">CPF - Conjuge</label>
+                                    <input id="cpf" oninput="mascaraCPF(this)" minlength="14" type="text" name="CPF" placeholder="Digite o CPF" required>
+                                </div>
+
+                                <div class="input-box">
+                                    <label for="marry-date" >Data de Registro de Casamento (OUTROS)</label>
+                                    <input id="marry-date" type="date" name="DN Casamento" placeholder="" required>
+                                </div>
+                                  
+                                <br>
+
+                                <div class="input-box">
+                                    <label for="education-degree">Grau de Ensino</label>
+                                    <select name="GRAU DE ENSINO" id="education-degree">
+                                        <option value="Fundamental Incompleto">Fundamental Incompleto</option>
+                                        <option value="Fundamental Completo">Fundamental Completo</option>
+                                        <option value="Médio Incompleto">Médio Incompleto</option>
+                                        <option value="Médio Completo">Médio Completo</option>         
+                                        <option value="Superior Incompleto">Superior Incompleto</option>     
+                                        <option value="Superior Completo">Superior Completo</option>  
+                                        <option value="Pós-Graduação Completa">Pós-Graduação Completa</option>    
+                                        <option value="Mestrado Completa">Mestrado Completo</option>              
+                                        <option value="Doutorado Completo">Doutorado Completo</option>
+                                    </select>      
+                                </div>
+
+                                <div class="input-box">
+                                    <label for="institution">Instituição de ensino</label>
+                                    <input id="institution" oninput="this.value = this.value.toUpperCase()" type="text" name="Instituição de ensino" placeholder="Digite a Instituição de Ensino">  
+                                </div>
+
+                                <div class="input-box">
+                                    <label for="graduation">Curso / Graduação</label>
+                                    <input id="graduation" oninput="this.value = this.value.toUpperCase()" type="text" name="Curso /Graduação" placeholder="Digite o curso de graduação"> 
+                                </div>
+
                                 <div class="input-box">
                                     <label for="uf">UF</label>
-                                    <select name="UF" id="ufaddres">
+                                    <select name="UF - Instituiação" id="ufeducation">
                                         <option value="">Selecione a Unidade Federativa</option>
                                         <option value="AC">AC</option>
                                         <option value="AL">AL</option>
@@ -381,16 +470,51 @@
                                         <option value="SP">SP</option>
                                         <option value="SE">SE</option> 
                                         <option value="TO">TO</option>                                      
-                                    </select>
-                                
+                                    </select>  
+                                </div>         
+                                       
+                                    
+
+                            </fieldset>
+
+                            <label>Dependentes:</label>
+                            <input type="radio" id="dependentesSim" name="dependentes" value="sim" onclick="toggleDependentes()"> Sim
+                            <input type="radio" id="dependentesNao" name="dependentes" value="nao" onclick="toggleDependentes()"> Não
+                    
+                            <fieldset>
+                                <div id="dependentesInfo" class="hidden">
+                                    <label for="numDependentes">Quantos dependentes?</label>
+                                    <input type="number" id="numDependentes" name="numDependentes" onchange="generateDependentesInputs()">
                                 </div>
-                                
-                                <div class="input-box">
-                                    <label for="reference">Ponto de Referência</label>
-                                    <input id="reference"oninput="this.value = this.value.toUpperCase()"  type="text" name="REFERÊNCIA" placeholder="Digite um Ponto de Referência">
+                            </fieldset>
+                            
+                            <fieldset>
+                                <div id="dependentesDetails" class="hidden">
+                                    
+                                        <legend>Dados dos dependentes</legend>
+                                        <div id="dependentesInputs"></div>
+                                    
                                 </div>
-                            </fieldset>                              
-                        </div>   
+                            </fieldset>
+
+                            <label>Exerço outro(s) cargo(s) público(s), função(es) ou emprego(s) e órgãos:</label>
+        <input type="radio" id="cargosSim" name="cargos" value="sim" onclick="toggleCargos()"> Sim
+        <input type="radio" id="cargosNao" name="cargos" value="nao" onclick="toggleCargos()"> Não
+        <br>
+
+        <div id="cargosInfo" class="hidden">
+            <fieldset>
+                <label for="numCargos">Quantos cargos?</label>
+                <input type="number" id="numCargos" name="numCargos" onchange="generateCargosInputs()">
+            </fieldset>            
+        </div>
+        <fieldset>
+            <div id="cargosDetails" class="hidden">
+                <legend>Dados dos cargos</legend>
+                <div id="cargosInputs"></div>
+        </fieldset>
+        
+                        <!--
                         
                         <div id="bio-parents">
                             <h3>Filiação</h3>
@@ -456,7 +580,7 @@
                                         </div>
                             </fieldset>
                         </div> 
-                        
+                        -->
                     </div>
                     <fieldset id="final-buttons">
                         <div class="send-button">
