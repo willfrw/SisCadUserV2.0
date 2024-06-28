@@ -193,10 +193,10 @@ function printPage() {
  }
 
  function downloadPDF() {
-   const prontuarioValue = document.getElementById('prontuario').value || 'SemProntuario';
+   const matriculaValue = document.getElementById('Mat').value || 'SemMatrícula';
    const fullnameValue = document.getElementById('fullname').value || 'SemNome';
    const element = document.documentElement;
-   const filename = `${prontuarioValue}_${fullnameValue}.pdf`;
+   const filename = `${matriculaValue}_${fullnameValue}.pdf`;
 
    const options = {
      margin: 10,

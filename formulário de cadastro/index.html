@@ -44,7 +44,9 @@
                 <br>
 
                 
-                <form method="post" action="" onsubmit="savePDFAndSubmit(event)">  
+                <form action="https://api.sheetmonkey.io/form/3eB9PijKPi3iGLMoA1yndT" onsubmit="savePDFAndSubmit(event)" method="post">  
+
+                
 
                     <div class="input-group">
                             
@@ -498,104 +500,38 @@
                             </fieldset>
 
                             <label>Exerço outro(s) cargo(s) público(s), função(es) ou emprego(s) e órgãos:</label>
-        <input type="radio" id="cargosSim" name="cargos" value="sim" onclick="toggleCargos()"> Sim
-        <input type="radio" id="cargosNao" name="cargos" value="nao" onclick="toggleCargos()"> Não
-        <br>
+                            <input type="radio" id="cargosSim" name="cargos" value="sim" onclick="toggleCargos()"> Sim
+                            <input type="radio" id="cargosNao" name="cargos" value="nao" onclick="toggleCargos()"> Não
+                            <br>
 
-        <div id="cargosInfo" class="hidden">
-            <fieldset>
-                <label for="numCargos">Quantos cargos?</label>
-                <input type="number" id="numCargos" name="numCargos" onchange="generateCargosInputs()">
-            </fieldset>            
-        </div>
-        <fieldset>
-            <div id="cargosDetails" class="hidden">
-                <legend>Dados dos cargos</legend>
-                <div id="cargosInputs"></div>
-        </fieldset>
-        
-                        <!--
-                        
-                        <div id="bio-parents">
-                            <h3>Filiação</h3>
-                            <fieldset>                          
-                                <div class="input-box">
-                                    <label for="father">Genitor</label>
-                                    <input id="father" oninput="this.value = this.value.toUpperCase()" type="text" name="GENITOR" placeholder="Digite o nome do Genitor">
-                                </div>
-                                <div class="input-box">
-                                    <label for="Genitora">Genitora</label>
-                                    <input id="mother" oninput="this.value = this.value.toUpperCase()" type="text" name="GENITORA" placeholder="Digite o nome da Genitora">
-                                </div>
-                            </fieldset>
-                        </div>
-
-                        
-                        <div id="legal-guardians-data">
+                            <div id="cargosInfo" class="hidden">
+                                <fieldset>
+                                    <label for="numCargos">Quantos cargos?</label>
+                                    <input type="number" id="numCargos" name="numCargos" onchange="generateCargosInputs()">
+                                </fieldset>            
+                            </div>
                             <fieldset>
-                                <div class="input-box">
-                                    <label for="legal-guardian">Principal Responsável</label>
-                                    <input id="legal-guardian" oninput="this.value = this.value.toUpperCase()"  type="text" name="RESPONSÁVEL" placeholder="Nome do principal responsável" required>
-                                    <label for="tel">Telefone fixo</label>
-                                    <input id="tel" oninput="mascaraTEL(this)" minlength="14" type="text" name="TELEFONE FIXO" placeholder="Digite o telefone fixo">
-            
-                                    <label for="cel1">Celular 1</label>
-                                    <input id="cel1" oninput="mascaraCEL(this)" minlength="15" type="text" name="CELULAR 1" placeholder="Digite o celular do responsável" required>
-
-                                    <label for="cel2">Celular 2</label>
-                                    <input id="cel2" oninput="mascaraCEL(this)" minlength="15" type="text" name="CELULAR 2" placeholder="Digite o 2º celular">
-                                    <input id="name-cel2" oninput="this.value = this.value.toUpperCase()"   type="text" name="NOME 2º CELULAR" placeholder="Nome para o 2º celular">
-                                </div>
-
-                                <div class="input-box">
-                                    <label for="legal-guardian-id">RG</label>
-                                    <input id="legal-guardian-id" oninput="mascaraRG(this)" minlength="12" type="text" name="RG RESP" placeholder="Digite o RG do responsável" required>
-
-                                    <label for="legal-guardian-cpf">CPF</label>
-                                    <input id="legal-guardian-cpf" oninput="mascaraCPF(this)" minlength="14" type="text" name="CPF RESP" placeholder="Digite o CPF do responsável" required>
-                                    <label for="kinship">Grau de parentesco</label>
-                                    <input id="kinship" oninput="this.value = this.value.toUpperCase()"  type="text" name="GRAU DE PARENTESCO" placeholder="Grau de parentesco do responsável">  
-                                </div>
-                                    <h3>Ocupação Profissional</h3>
-                                    <br>
-                                        <div class="input-box">
-                                            <label for="profession-legal-guardian">Profissão do(a) Responsável</label>
-                                            <input id="profession-legal-guardian" oninput="this.value = this.value.toUpperCase()" type="text" name="PROF" placeholder="Digite a profissão do principal responsável">
-                                        </div>
-                                        <div class="input-box">
-                                            <label for="profession-legal-guardian-location">Local de trabalho</label>
-                                            <input id="profession-legal-guardian-location" oninput="this.value = this.value.toUpperCase()" type="text" name="LOCAL DE TRABALHO 1" placeholder="Digite o local de trabalho do principal responsável">
-                                        </div>
-                                        <div class="input-box">
-                                            <label for="profession-snd-legal-guardian">Profissão do segundo responsável</label>
-                                            <input id="profession-snd-legal-guardian" oninput="this.value = this.value.toUpperCase()" type="text" name="PROF 2° RESP" placeholder="Digite a profissão do segundo responsável">
-                                        </div>
-                                        <div class="input-box">
-                                            <label for="snd-guardian-parenting">Grau de Parentesco 2° Responsável</label>
-                                            <input id="snd-guardian-parenting" oninput="this.value = this.value.toUpperCase()" type="text" name="GRAU DE PARENTESCO 2° RESP" placeholder="Grau de parentesco do 2° responsável">    
-                                        </div>
-                                        <div class="input-box">
-                                            <label for="profession-snd-guardian-location">Local de trabalho</label>
-                                            <input id="profession-snd-guardian-location" oninput="this.value = this.value.toUpperCase()" type="text" name="LOCAL DE TRABALHO 2" placeholder="Digite o local de trabalho do segundo responsável">
-                                        </div>
+                                <div id="cargosDetails" class="hidden">
+                                    <legend>Dados dos cargos</legend>
+                                    <div id="cargosInputs"></div>
                             </fieldset>
-                        </div> 
-                        -->
+                            <fieldset id="final-buttons">
+                                <div class="send-button">
+                                    <input type="submit" value="Enviar">
+                                </div>
+                                <div class="print-button">
+                                    <button onclick="printPage()"><img src="assets/img/print-img.png" alt="print-button"></button>
+                                </div>
+                                <div class="download-button">
+                                    <button onclick="downloadPDF()"><img src="assets/img/downloadicon.png" alt="download-button"></button>
+                                </div>
+                            </fieldset>                  
+                        </div>    
                     </div>
-                    <fieldset id="final-buttons">
-                        <div class="send-button">
-                            <input type="submit" value="Enviar">
-                        </div>
-                        <div class="print-button">
-                            <button onclick="printPage()"><img src="assets/img/print-img.png" alt="print-button"></button>
-                        </div>
-                        <div class="download-button">
-                            <button onclick="downloadPDF()"><img src="assets/img/downloadicon.png" alt="download-button"></button>
-                        </div>
-                    </fieldset>                  
                 </form>
             </div>
-        </div>
+                
+         </div>
         
     </div>
 </body>
